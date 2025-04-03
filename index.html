@@ -5,69 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShoeStore - Cửa hàng giày chính hãng</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <nav class="navbar">
+        <nav>
             <div class="logo">
-                <h1>ShoeStore</h1>
+                <a href="index.html">ShoeStore</a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html" class="active">Trang chủ</a></li>
                 <li><a href="products.html">Sản phẩm</a></li>
                 <li><a href="about.html">Về chúng tôi</a></li>
                 <li><a href="contact.html">Liên hệ</a></li>
-                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
             </ul>
+            <div class="cart">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Chào mừng đến với ShoeStore</h1>
-            <p>Khám phá bộ sưu tập giày mới nhất với giá tốt nhất</p>
-            <a href="products.html" class="cta-button">Xem sản phẩm</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Chào mừng đến với ShoeStore</h1>
+                <p>Khám phá bộ sưu tập giày chính hãng với chất lượng tốt nhất</p>
+                <a href="products.html" class="cta-button">Xem sản phẩm</a>
+            </div>
+        </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <h2>Sản phẩm nổi bật</h2>
-        <div class="product-grid">
-            <!-- Product cards will be added here -->
-        </div>
-    </section>
+        <section class="banner-section">
+            <div class="banner-grid">
+                <div class="banner-item">
+                    <img src="images/banner1.jpg" alt="New Collection">
+                    <div class="banner-content">
+                        <h2>Bộ sưu tập mới</h2>
+                        <p>Khám phá những mẫu giày mới nhất</p>
+                        <a href="products.html" class="banner-button">Xem ngay</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="images/banner2.jpg" alt="Best Seller">
+                    <div class="banner-content">
+                        <h2>Sản phẩm bán chạy</h2>
+                        <p>Những mẫu giày được yêu thích nhất</p>
+                        <a href="products.html" class="banner-button">Khám phá</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Về chúng tôi</h3>
-                <p>ShoeStore - Cửa hàng giày chính hãng với chất lượng tốt nhất</p>
-            </div>
-            <div class="footer-section">
-                <h3>Liên kết nhanh</h3>
-                <ul>
-                    <li><a href="products.html">Sản phẩm</a></li>
-                    <li><a href="about.html">Về chúng tôi</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
-                </ul>
+                <h3>Về ShoeStore</h3>
+                <p>Cửa hàng giày chính hãng với chất lượng và dịch vụ tốt nhất</p>
             </div>
             <div class="footer-section">
                 <h3>Liên hệ</h3>
                 <p>Email: info@shoestore.com</p>
-                <p>Điện thoại: 0123.456.789</p>
-                <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+                <p>Điện thoại: (84) 123-456-789</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 ShoeStore. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html> 
