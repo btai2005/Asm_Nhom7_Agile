@@ -5,39 +5,42 @@ function displayCartItems() {
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<p class="empty-cart">Giỏ hàng của bạn đang trống</p>';
-        updateCartSummary(0);
+        updateCartSummary();
         return;
     }
 
-    cartItems.innerHTML = cart.map((item, index) => `
-        <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}">
-            <div class="item-details">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <p class="price">${formatPrice(item.price)}</p>
+    cartItems.innerHTML = cart.map((item, index) => {
+        const itemTotal = item.price * (item.quantity || 1);
+        return `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>Kích cỡ: ${item.selectedSize || 'N/A'}</p>
+                    <p class="price">${formatPrice(itemTotal)}</p>
+                </div>
+                <div class="item-quantity">
+                    <button onclick="updateQuantity(${index}, -1)">-</button>
+                    <span>${item.quantity || 1}</span>
+                    <button onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">
+                    <i class="fas fa-trash"></i>
+                </button>
             </div>
-            <div class="item-quantity">
-                <button onclick="updateQuantity(${index}, -1)">-</button>
-                <span>1</span>
-                <button onclick="updateQuantity(${index}, 1)">+</button>
-            </div>
-            <button class="remove-item" onclick="removeFromCart(${index})">
-                <i class="fas fa-trash"></i>
-            </button>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     updateCartSummary();
 }
 
 // Cập nhật số lượng sản phẩm
 function updateQuantity(index, change) {
-    // Trong phiên bản này, chúng ta chỉ cho phép 1 sản phẩm mỗi loại
-    if (change > 0) {
-        showNotification('Bạn chỉ có thể mua 1 sản phẩm mỗi loại');
-    } else {
-        removeFromCart(index);
+    if (cart[index].quantity + change > 0) {
+        cart[index].quantity += change;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCartItems();
+        updateCartCount();
     }
 }
 
@@ -52,14 +55,19 @@ function removeFromCart(index) {
 
 // Cập nhật tổng tiền
 function updateCartSummary() {
-    const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-    const total = subtotal;
+    const subtotal = calculateTotal();
+    const shipping = 0; // Miễn phí vận chuyển
+    const total = subtotal + shipping;
 
     const subtotalElement = document.getElementById('subtotal');
     const totalElement = document.getElementById('total');
 
-    if (subtotalElement) subtotalElement.textContent = formatPrice(subtotal);
-    if (totalElement) totalElement.textContent = formatPrice(total);
+    if (subtotalElement) {
+        subtotalElement.textContent = formatPrice(subtotal);
+    }
+    if (totalElement) {
+        totalElement.textContent = formatPrice(total);
+    }
 }
 
 // Thanh toán
@@ -68,11 +76,28 @@ function checkout() {
         showNotification('Giỏ hàng của bạn đang trống');
         return;
     }
-    showNotification('Cảm ơn bạn đã mua hàng! Đơn hàng của bạn đang được xử lý.');
+
+    // Tạo thông tin đơn hàng
+    const order = {
+        items: cart,
+        total: calculateTotal(),
+        date: new Date().toISOString(),
+        status: 'pending'
+    };
+
+    // Lưu đơn hàng vào localStorage
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    orders.push(order);
+    localStorage.setItem('orders', JSON.stringify(orders));
+
+    // Xóa giỏ hàng
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCartItems();
     updateCartCount();
+
+    // Chuyển hướng đến trang xác nhận đơn hàng
+    window.location.href = 'order-confirmation.html';
 }
 
 // Khởi tạo

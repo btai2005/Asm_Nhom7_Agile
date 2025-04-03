@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng - ShoeStore</title>
+    <title>Xác nhận đơn hàng - ShoeStore</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -24,29 +24,44 @@
         </nav>
     </header>
 
-    <!-- Cart Section -->
-    <section class="cart-section">
+    <!-- Order Confirmation Section -->
+    <section class="order-confirmation-section">
         <div class="container">
-            <h2>Giỏ hàng của bạn</h2>
-            <div class="cart-container">
-                <div class="cart-items">
-                    <!-- Cart items will be loaded here -->
+            <div class="order-confirmation">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
                 </div>
-                <div class="cart-summary">
-                    <h3>Tổng đơn hàng</h3>
-                    <div class="summary-item">
-                        <span>Tạm tính:</span>
-                        <span id="subtotal">0đ</span>
+                <h1>Đặt hàng thành công!</h1>
+                <p>Cảm ơn bạn đã mua hàng tại ShoeStore</p>
+                
+                <div class="order-details">
+                    <h2>Chi tiết đơn hàng</h2>
+                    <div class="order-items" id="order-items">
+                        <!-- Order items will be added here -->
                     </div>
-                    <div class="summary-item">
-                        <span>Phí vận chuyển:</span>
-                        <span>Miễn phí</span>
+                    <div class="order-summary">
+                        <div class="summary-item">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">0đ</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Phí vận chuyển:</span>
+                            <span>Miễn phí</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Tổng cộng:</span>
+                            <span id="total">0đ</span>
+                        </div>
                     </div>
-                    <div class="summary-item total">
-                        <span>Tổng cộng:</span>
-                        <span id="total">0đ</span>
-                    </div>
-                    <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
+                </div>
+
+                <div class="order-actions">
+                    <a href="products.html" class="continue-shopping-btn">
+                        Tiếp tục mua sắm
+                    </a>
+                    <a href="orders.html" class="view-orders-btn">
+                        Xem đơn hàng của tôi
+                    </a>
                 </div>
             </div>
         </div>
@@ -80,6 +95,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/order-confirmation.js"></script>
 </body>
 </html> 
