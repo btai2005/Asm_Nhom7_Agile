@@ -350,6 +350,200 @@
             font-size: 28px;
             font-weight: bold;
         }
+
+        /* Styles cho phần đánh giá */
+        .product-reviews {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .rating-average {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2d3436;
+            line-height: 1;
+        }
+
+        .rating-stars {
+            color: #ffd700;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .total-ratings {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-style: italic;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .rating-summary {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+        /* Thêm styles cho phần chi tiết đánh giá */
+        .reviews-list {
+            margin-top: 30px;
+        }
+
+        .review-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px;
+        }
+
+        .review-user {
+            text-align: center;
+        }
+
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .user-avatar i {
+            font-size: 24px;
+            color: #666;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 14px;
+        }
+
+        .review-content {
+            flex: 1;
+        }
+
+        .review-rating {
+            color: #ffd700;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .review-date {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 576px) {
+            .review-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .review-user {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .user-avatar {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Styles cho phần chọn màu sắc */
+        .color-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border-color: #ff4757;
+        }
+
+        .color-option.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 0 0 2px rgba(0,0,0,0.5);
+        }
+
+        .color-option[data-color="white"] {
+            background: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        .color-option[data-color="black"] {
+            background: #000000;
+        }
+
+        .color-option[data-color="red"] {
+            background: #ff4757;
+        }
+
+        .color-option[data-color="blue"] {
+            background: #2e86de;
+        }
+
+        .color-option[data-color="grey"] {
+            background: #808e9b;
+        }
     </style>
     </head>
     <body>
@@ -429,7 +623,11 @@
                         <div class="filter-section">
                             <div class="filter-title">Màu sắc</div>
                             <div class="color-options" id="color-options">
-                                <!-- Màu sắc sẽ được thêm vào đây bằng JavaScript -->
+                                <div class="color-option" data-color="white" title="Trắng"></div>
+                                <div class="color-option" data-color="black" title="Đen"></div>
+                                <div class="color-option" data-color="red" title="Đỏ"></div>
+                                <div class="color-option" data-color="blue" title="Xanh dương"></div>
+                                <div class="color-option" data-color="grey" title="Xám"></div>
                             </div>
                         </div>
 
@@ -458,6 +656,132 @@
                     <h2 class="description-title">Mô tả sản phẩm</h2>
                     <div class="description-content" id="product-description">
                         <!-- Mô tả sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Thêm phần đánh giá sản phẩm -->
+                <div class="product-reviews">
+                    <h2 class="description-title">Đánh giá từ khách hàng</h2>
+                    <div id="reviews-container">
+                        <div class="rating-summary">
+                            <div class="rating-average">
+                                <div class="rating-number" id="average-rating">4.8</div>
+                                <div class="rating-stars" id="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="total-ratings" id="total-ratings">5 đánh giá</div>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <!-- Đánh giá 1 -->
+                            <div class="review-item">
+                                <div class="review-user">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-name">Nguyễn Văn A</div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">15 tháng 3, 2024</div>
+                                    <div class="review-text">Giày rất đẹp, đúng với mô tả. Chất lượng tốt, form giày vừa vặn. Đóng gói cẩn thận, giao hàng nhanh.</div>
+                                </div>
+                            </div>
+
+                            <!-- Đánh giá 2 -->
+                            <div class="review-item">
+                                <div class="review-user">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-name">Trần Thị B</div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">14 tháng 3, 2024</div>
+                                    <div class="review-text">Sản phẩm tuyệt vời, chất lượng cao cấp. Shop tư vấn nhiệt tình.</div>
+                                </div>
+                            </div>
+
+                            <!-- Đánh giá 3 -->
+                            <div class="review-item">
+                                <div class="review-user">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-name">Lê Văn C</div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="review-date">13 tháng 3, 2024</div>
+                                    <div class="review-text">Giày đẹp, đáng tiền. Giao hàng hơi lâu một chút.</div>
+                                </div>
+                            </div>
+
+                            <!-- Đánh giá 4 -->
+                            <div class="review-item">
+                                <div class="review-user">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-name">Phạm Thị D</div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">12 tháng 3, 2024</div>
+                                    <div class="review-text">Rất hài lòng với sản phẩm. Sẽ ủng hộ shop dài dài.</div>
+                                </div>
+                            </div>
+
+                            <!-- Đánh giá 5 -->
+                            <div class="review-item">
+                                <div class="review-user">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-name">Hoàng Văn E</div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">11 tháng 3, 2024</div>
+                                    <div class="review-text">Chất lượng sản phẩm tuyệt vời, đúng như mô tả.</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
