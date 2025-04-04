@@ -5,7 +5,7 @@ const products = [
         name: "Nike Air Max",
         brand: "Nike",
         price: 2500000,
-        image: "images/product1.jpg",
+        image: "images/giay-nike-air-max.webp",
         category: "Running",
         inStock: true
     },

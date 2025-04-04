@@ -30,17 +30,93 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1>Chào mừng đến với ShoeStore</h1>
-                <p>Khám phá bộ sưu tập giày chính hãng với chất lượng tốt nhất</p>
-                <a href="products.html" class="cta-button">Xem sản phẩm</a>
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="images/casual.jpg" alt="Slide 1">
+                    <div class="slide-content">
+                        <h1>Chào mừng đến với ShoeStore</h1>
+                        <p>Khám phá bộ sưu tập giày chính hãng với chất lượng tốt nhất</p>
+                        <a href="products.html" class="cta-button">Xem sản phẩm</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/runnong.jpg" alt="Slide 2">
+                    <div class="slide-content">
+                        <h1>Bộ sưu tập mới</h1>
+                        <p>Những mẫu giày mới nhất với thiết kế độc đáo</p>
+                        <a href="products.html" class="cta-button">Khám phá ngay</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/sale.jpg" alt="Slide 3">
+                    <div class="slide-content">
+                        <h1>Ưu đãi đặc biệt</h1>
+                        <p>Giảm giá lên đến 50% cho các sản phẩm bán chạy</p>
+                        <a href="products.html" class="cta-button">Mua ngay</a>
+                    </div>
+                </div>
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                <div class="slide-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </div>
         </section>
+
+        <!-- Product Slideshow Section -->
+        <div class="product-showcase">
+            <div class="product-slideshow">
+                <div class="product-slide active">
+                    <div class="product-slide-content">
+                        <div class="product-image">
+                            <img src="images/giay-nike-air-max.webp" alt="Nike Air Max 270">
+                        </div>
+                        <div class="product-info">
+                            <h2>Nike Air Max 270</h2>
+                            <p class="price">3.500.000đ</p>
+                            <p class="description">Giày thể thao với đế Air Max đặc trưng, thiết kế hiện đại và thoải mái. Phù hợp cho mọi hoạt động thể thao và thời trang hàng ngày.</p>
+                            <a href="products.html" class="view-product">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-slide">
+                    <div class="product-slide-content">
+                        <div class="product-image">
+                            <img src="images/ultraBoot.webp" alt="Adidas Ultraboost">
+                        </div>
+                        <div class="product-info">
+                            <h2>Adidas Ultraboost</h2>
+                            <p class="price">4.200.000đ</p>
+                            <p class="description">Giày chạy bộ với công nghệ Boost, êm ái và bền bỉ. Thiết kế tối ưu cho hiệu suất vận động cao.</p>
+                            <a href="products.html" class="view-product">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-slide">
+                    <div class="product-slide-content">
+                        <div class="product-image">
+                            <img src="images/Suede Classic.jpg" alt="Puma RS-X">
+                        </div>
+                        <div class="product-info">
+                            <h2>Puma RS-X</h2>
+                            <p class="price">2.800.000đ</p>
+                            <p class="description">Sneaker thời trang với thiết kế retro, phong cách cá tính. Phù hợp với phong cách streetwear hiện đại.</p>
+                            <a href="products.html" class="view-product">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="product-prev-btn">❮</button>
+                <button class="product-next-btn">❯</button>
+                <div class="product-dots"></div>
+            </div>
+        </div>
 
         <section class="banner-section">
             <div class="banner-grid">
                 <div class="banner-item">
-                    <img src="images/banner1.jpg" alt="New Collection">
+                    <img src="images/boSuTap.jpg" alt="New Collection">
                     <div class="banner-content">
                         <h2>Bộ sưu tập mới</h2>
                         <p>Khám phá những mẫu giày mới nhất</p>
@@ -48,7 +124,7 @@
                     </div>
                 </div>
                 <div class="banner-item">
-                    <img src="images/banner2.jpg" alt="Best Seller">
+                    <img src="images/sanPhamBanChay.webp" alt="Best Seller">
                     <div class="banner-content">
                         <h2>Sản phẩm bán chạy</h2>
                         <p>Những mẫu giày được yêu thích nhất</p>
@@ -83,5 +159,7 @@
             <p>&copy; 2024 ShoeStore. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/main.js"></script>
+    <script src="js/slideshow.js"></script>
 </body>
 </html> 
