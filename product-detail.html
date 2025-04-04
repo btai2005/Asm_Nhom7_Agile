@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm - ShoeStore</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chi tiết sản phẩm - ShoeStore</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
         .product-detail-container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -295,121 +296,128 @@
             }
         }
     </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">ShoeStore</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="products.html">Sản phẩm</a></li>
-                <li><a href="about.html">Về chúng tôi</a></li>
-                <li><a href="contact.html">Liên hệ</a></li>
-            </ul>
-            <div class="cart">
-                <a href="cart.html">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
-            </div>
-        </nav>
-    </header>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">ShoeStore</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="about.html">Về chúng tôi</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
 
-    <main>
-        <div class="product-detail-container">
-            <div class="product-detail">
-                <div class="product-gallery">
-                    <img id="main-image" src="" alt="" class="main-image">
-                    <div class="thumbnail-container" id="thumbnail-container">
-                        <!-- Thumbnails sẽ được thêm vào đây bằng JavaScript -->
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h1 class="product-title" id="product-title"></h1>
-                    <div class="product-price" id="product-price"></div>
-                    <div class="product-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Thương hiệu:</span>
-                            <span id="product-brand"></span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Danh mục:</span>
-                            <span id="product-category"></span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Tình trạng:</span>
-                            <span id="product-stock"></span>
+        <main>
+            <div class="product-detail-container">
+                <div class="product-detail">
+                    <div class="product-gallery">
+                        <img id="main-image" src alt class="main-image">
+                        <div class="thumbnail-container"
+                            id="thumbnail-container">
+                            <!-- Thumbnails sẽ được thêm vào đây bằng JavaScript -->
                         </div>
                     </div>
-                    
-                    <!-- Thêm phần lọc kích cỡ -->
-                    <div class="filter-section">
-                        <div class="filter-title">Kích cỡ</div>
-                        <div class="size-options" id="size-options">
-                            <!-- Kích cỡ sẽ được thêm vào đây bằng JavaScript -->
+                    <div class="product-info">
+                        <h1 class="product-title" id="product-title"></h1>
+                        <div class="product-price" id="product-price"></div>
+                        <div class="product-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Thương hiệu:</span>
+                                <span id="product-brand"></span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Danh mục:</span>
+                                <span id="product-category"></span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Tình trạng:</span>
+                                <span id="product-stock"></span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Thêm phần lọc màu sắc -->
-                    <div class="filter-section">
-                        <div class="filter-title">Màu sắc</div>
-                        <div class="color-options" id="color-options">
-                            <!-- Màu sắc sẽ được thêm vào đây bằng JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div class="quantity-selector">
-                        <span>Số lượng:</span>
-                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
-                        <input type="number" id="quantity" class="quantity-input" value="1" min="1">
-                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="add-to-cart-btn" onclick="addToCart()">
-                            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
-                        </button>
-                        <button class="buy-now-btn" onclick="buyNow()">
-                            Mua ngay
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-description">
-                <h2 class="description-title">Mô tả sản phẩm</h2>
-                <div class="description-content" id="product-description">
-                    <!-- Mô tả sản phẩm sẽ được thêm vào đây bằng JavaScript -->
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Về ShoeStore</h3>
-                <p>Cửa hàng giày chính hãng với chất lượng và dịch vụ tốt nhất</p>
-            </div>
-            <div class="footer-section">
-                <h3>Liên hệ</h3>
-                <p>Email: info@shoestore.com</p>
-                <p>Điện thoại: (84) 123-456-789</p>
-            </div>
-            <div class="footer-section">
-                <h3>Theo dõi chúng tôi</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                        <!-- Thêm phần lọc kích cỡ -->
+                        <div class="filter-section">
+                            <div class="filter-title">Kích cỡ</div>
+                            <div class="size-options" id="size-options">
+                                <!-- Kích cỡ sẽ được thêm vào đây bằng JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Thêm phần lọc màu sắc -->
+                        <div class="filter-section">
+                            <div class="filter-title">Màu sắc</div>
+                            <div class="color-options" id="color-options">
+                                <!-- Màu sắc sẽ được thêm vào đây bằng JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <span>Số lượng:</span>
+                            <button class="quantity-btn"
+                                onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="quantity"
+                                class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn"
+                                onclick="increaseQuantity()">+</button>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="add-to-cart-btn"
+                                onclick="addToCart()">
+                                <i class="fas fa-shopping-cart"></i> Thêm vào
+                                giỏ hàng
+                            </button>
+                            <button class="buy-now-btn" onclick="buyNow()">
+                                Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h2 class="description-title">Mô tả sản phẩm</h2>
+                    <div class="description-content" id="product-description">
+                        <!-- Mô tả sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 ShoeStore. All rights reserved.</p>
-        </div>
-    </footer>
+        </main>
 
-    <script src="js/product-detail.js"></script>
-</body>
-</html> 
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về ShoeStore</h3>
+                    <p>Cửa hàng giày chính hãng với chất lượng và dịch vụ tốt
+                        nhất</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Email: info@shoestore.com</p>
+                    <p>Điện thoại: (84) 123-456-789</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShoeStore. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="js/product-detail.js"></script>
+    </body>
+</html>
