@@ -14,7 +14,7 @@ const products = [
         name: "Adidas Superstar",
         brand: "Adidas", 
         price: 1800000,
-        image: "images/product2.jpg",
+        image: "images/adidasSuperStar.webp",
         category: "Casual",
         inStock: true
     },
@@ -23,7 +23,7 @@ const products = [
         name: "Puma RS-X",
         brand: "Puma",
         price: 2200000,
-        image: "images/product3.jpg",
+        image: "images/van.jpg",
         category: "Lifestyle",
         inStock: true
     },
@@ -32,7 +32,7 @@ const products = [
         name: "Nike Air Jordan",
         brand: "Nike",
         price: 3200000,
-        image: "images/product4.jpg",
+        image: "images/jd1.jpg",
         category: "Basketball",
         inStock: true
     },
@@ -41,7 +41,7 @@ const products = [
         name: "Adidas Ultra Boost",
         brand: "Adidas",
         price: 2800000,
-        image: "images/product5.jpg",
+        image: "images/ultraBoot.webp",
         category: "Running",
         inStock: true
     },
@@ -50,7 +50,7 @@ const products = [
         name: "Converse Chuck 70",
         brand: "Converse",
         price: 1500000,
-        image: "images/product6.jpg",
+        image: "images/adidasSuperStar.webp",
         category: "Casual",
         inStock: true
     }

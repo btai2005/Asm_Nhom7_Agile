@@ -10,10 +10,10 @@ const products = [
         inStock: true,
         description: "Giày Nike Air Max với công nghệ đệm Air độc quyền, mang lại cảm giác thoải mái và nhẹ nhàng khi di chuyển. Thiết kế hiện đại, phù hợp cho cả tập luyện và lifestyle.",
         images: [
-            "images/product1.jpg",
-            "images/product1-2.jpg",
-            "images/product1-3.jpg",
-            "images/product1-4.jpg"
+            "images/mau01.jpg",
+            "images/mau02.jpg",
+            "images/mau03.jpg",
+            "images/mau04.jpg"
         ],
         sizes: [
             { size: "36", inStock: true },
@@ -42,10 +42,10 @@ const products = [
         inStock: true,
         description: "Giày Adidas Superstar là biểu tượng của phong cách streetwear. Với thiết kế cổ điển và logo vỏ sò đặc trưng, đây là lựa chọn hoàn hảo cho phong cách casual.",
         images: [
-            "images/product2.jpg",
-            "images/product2-2.jpg",
-            "images/product2-3.jpg",
-            "images/product2-4.jpg"
+            "images/mau05.jpg",
+            "images/mau06.jpg",
+            "images/mau07.jpg",
+            "images/mau08.jpg"
         ],
         sizes: [
             { size: "36", inStock: true },
@@ -73,10 +73,10 @@ const products = [
         inStock: true,
         description: "Puma RS-X kết hợp giữa thiết kế retro và công nghệ hiện đại. Đế dày với nhiều lớp đệm, mang lại cảm giác thoải mái và phong cách thời trang độc đáo.",
         images: [
-            "images/product3.jpg",
-            "images/product3-2.jpg",
-            "images/product3-3.jpg",
-            "images/product3-4.jpg"
+            "images/mau09.jpg",
+            "images/mau10.jpg",
+            "images/mau11.jpg",
+            "images/mau12mau12.jpg"
         ],
         sizes: [
             { size: "36", inStock: true },
@@ -104,10 +104,10 @@ const products = [
         inStock: true,
         description: "Nike Air Jordan là dòng giày bóng rổ huyền thoại. Với công nghệ đệm Air và thiết kế đặc trưng, mang lại hiệu suất tối ưu trên sân và phong cách thời trang.",
         images: [
-            "images/product4.jpg",
-            "images/product4-2.jpg",
-            "images/product4-3.jpg",
-            "images/product4-4.jpg"
+            "images/mau12.jpg",
+            "images/mau13.jpg",
+            "images/mau14.jpg",
+            "images/mau15.jpg"
         ],
         sizes: [
             { size: "38", inStock: true },
@@ -135,10 +135,10 @@ const products = [
         inStock: true,
         description: "Adidas Ultra Boost với công nghệ Boost đệm cao cấp, mang lại cảm giác nhẹ nhàng và phản hồi năng lượng tối ưu. Lý tưởng cho chạy bộ và các hoạt động thể thao.",
         images: [
-            "images/product5.jpg",
-            "images/product5-2.jpg",
-            "images/product5-3.jpg",
-            "images/product5-4.jpg"
+            "images/mau16.jpg",
+            "images/mau17.jpg",
+            "images/mau18.jpg",
+            "images/mau19.jpg"
         ],
         sizes: [
             { size: "36", inStock: true },
@@ -167,10 +167,10 @@ const products = [
         inStock: true,
         description: "Converse Chuck 70 là phiên bản cao cấp của Chuck Taylor All Star. Với chất liệu canvas dày hơn và đế cao su cứng hơn, mang lại độ bền và thoải mái vượt trội.",
         images: [
-            "images/product6.jpg",
-            "images/product6-2.jpg",
-            "images/product6-3.jpg",
-            "images/product6-4.jpg"
+            "images/mau20.jpg",
+            "images/mau01.jpg",
+            "images/mau02.jpg",
+            "images/mau05mau05.jpg"
         ],
         sizes: [
             { size: "36", inStock: true },
