@@ -1,3 +1,28 @@
+// Hàm hiển thị thông báo
+function showNotification(message, isSuccess = true) {
+    // Tạo element thông báo
+    const notification = document.createElement('div');
+    notification.className = `notification ${isSuccess ? 'success' : 'error'}`;
+    notification.textContent = message;
+    notification.style.position = 'fixed';
+    notification.style.bottom = '20px';
+    notification.style.right = '20px';
+    notification.style.padding = '1rem 2rem';
+    notification.style.backgroundColor = isSuccess ? '#4CAF50' : '#f44336';
+    notification.style.color = 'white';
+    notification.style.borderRadius = '4px';
+    notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+    notification.style.zIndex = '1000';
+
+    // Thêm vào body
+    document.body.appendChild(notification);
+
+    // Xóa thông báo sau 3 giây
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
 // Lấy danh sách người dùng từ localStorage
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -89,36 +114,23 @@ function handleLogin(event) {
         }
 
         // Hiển thị thông báo thành công
-        showNotification('Đăng nhập thành công!');
+        showNotification('Đăng nhập thành công! Đang chuyển hướng...', true);
         
-        // Chuyển hướng về trang chủ sau 1 giây
+        // Chuyển hướng về trang chủ sau 3 giây
         setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1000);
+            window.location.replace('./index.html');
+        }, 3000);
 
-        return false;
     } catch (error) {
-        showNotification('Có lỗi xảy ra trong quá trình đăng nhập. Vui lòng thử lại sau.');
-        return false;
+        console.error('Lỗi đăng nhập:', error);
+        showNotification('Có lỗi xảy ra trong quá trình đăng nhập. Vui lòng thử lại sau.', false);
     }
-}
 
-// Kiểm tra nếu đã đăng nhập
-function checkLoginStatus() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || 
-                       JSON.parse(sessionStorage.getItem('currentUser'));
-    
-    if (currentUser) {
-        // Nếu đã đăng nhập, chuyển hướng về trang chủ
-        window.location.href = 'index.html';
-    }
+    return false;
 }
 
 // Thêm sự kiện input để kiểm tra realtime
 document.addEventListener('DOMContentLoaded', () => {
-    // Kiểm tra trạng thái đăng nhập khi trang được tải
-    checkLoginStatus();
-
     const form = document.getElementById('loginForm');
     if (form) {
         form.addEventListener('input', (event) => {
